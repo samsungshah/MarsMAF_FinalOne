@@ -9,7 +9,7 @@
       <amx:commandButton id="cb1" action="__back"/>
     </amx:facet>
     <amx:facet name="secondary">
-    </amx:facet>
+    </amx:facet>   
     <amx:panelFormLayout id="pfl1">
       <amx:inputText value="MAF"
                      label="#{bindings.CallingSystemName.hints.label}" id="it10" rendered="false"/>
@@ -22,23 +22,30 @@
                      rendered="false"/>
       <amx:selectOneChoice value="#{bindings.inventoryOrg1.inputValue}" label="Inventory Org"
                            id="soc4">
+        <amx:selectItem value='""' id="si41" label=""/>                           
         <amx:selectItems value="#{bindings.inventoryOrg1.items}" id="si4"/>
       </amx:selectOneChoice>
       <amx:selectOneChoice value="#{bindings.subInventory1.inputValue}" label="Subinventory"
                            id="soc3">
-        <amx:selectItems value=" " id="si31"/>                   
+        <amx:selectItem value='""' id="si31" label=""/>                   
         <amx:selectItems value="#{bindings.subInventory1.items}" id="si3"/>
       </amx:selectOneChoice>
-      <amx:inputText value="#{bindings.itemCategoryFrom.inputValue}" label="#{bindings.itemCategoryFrom.hints.label}"
-                     id="it6"/>
-      <amx:inputText value="#{bindings.itemCategoryTo.inputValue}" label="#{bindings.itemCategoryTo.hints.label}"
-                     id="it11"/>
+      <amx:selectOneChoice value="#{bindings.itemCategoryFrom.inputValue}" label="Item Category From"
+                           id="soc5">
+        <amx:selectItem value='""' id="si51" label=""/>                           
+        <amx:selectItems value="#{bindings.itemCategoryFrom.items}" id="si5"/>
+      </amx:selectOneChoice>
+      <amx:selectOneChoice value="#{bindings.itemCategoryTo.inputValue}" label="Item Category To"
+                           id="soc6">
+        <amx:selectItem value='""' id="si61" label=""/>                           
+        <amx:selectItems value="#{bindings.itemCategoryTo.items}" id="si6"/>
+      </amx:selectOneChoice>
       <amx:selectOneChoice value="#{bindings.itemFrom1.inputValue}" label="#{bindings.itemFrom1.label}" id="soc1">
-        <amx:selectItems value=" " id="si11"/>
+        <amx:selectItem value='""' id="si11" label=""/>
         <amx:selectItems value="#{bindings.itemFrom1.items}" id="si1"/>
       </amx:selectOneChoice>
       <amx:selectOneChoice value="#{bindings.itemTo1.inputValue}" label="#{bindings.itemTo1.label}" id="soc2">
-        <amx:selectItems value=" " id="si21"/>
+        <amx:selectItem value='""' id="si21" label=""/>
         <amx:selectItems value="#{bindings.itemTo1.items}" id="si2"/>
       </amx:selectOneChoice>
       <amx:inputText value="#{bindings.asOnDate.inputValue}" label="#{bindings.asOnDate.hints.label}" id="it1"/>

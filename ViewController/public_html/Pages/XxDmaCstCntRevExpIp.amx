@@ -36,7 +36,6 @@
         </amx:panelFormLayout>
             </amx:listItem>
             <amx:listItem id="li7" showLinkIcon="false">
-                <?audit suppress oracle.maf.warning-missing-shortDesc?>
                 <amx:panelFormLayout id="pfl7">
           <amx:selectOneChoice value="#{bindings.element2.inputValue}" label="To Period" id="soc3">
           <?audit suppress oracle.ide.xml.wellformedness-error?>
@@ -81,3 +80,4 @@
                        disabled="#{!bindings.process.enabled}" id="cb2" action="CstCntRevExpOp"/>
   </amx:panelPage>
 </amx:view>
+<?audit suppress oracle.maf.warning-missing-shortDesc?>

@@ -43,6 +43,8 @@
     <dc id="ONTShipWarRpt_WL" path="com.oracle.mobile.xxdma.ONTShipWarRpt_WL"/>
     <dc id="ItemParamLov_DC" path="com.oracle.mobile.xxdma.ItemParamLov_DC"/>
     <dc id="ItemParamLov_WL" path="com.oracle.mobile.xxdma.ItemParamLov_WL"/>
+    <dc id="ItemcatParamLov_DC" path="com.oracle.mobile.xxdma.ItemcatParamLov_DC"/>
+    <dc id="ItemcatParamLov_WL" path="com.oracle.mobile.xxdma.ItemcatParamLov_WL"/>    
     <dc id="SubinvParamLov_DC" path="com.oracle.mobile.xxdma.SubinvParamLov_DC"/>
     <dc id="SubinvParamLov_WL" path="com.oracle.mobile.xxdma.SubinvParamLov_WL"/>
     <dc id="InvorgParamLov_WL" path="com.oracle.mobile.xxdma.InvorgParamLov_WL"/>

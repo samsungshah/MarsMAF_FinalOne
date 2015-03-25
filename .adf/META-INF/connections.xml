@@ -391,4 +391,32 @@
       </XmlRefAddr>
     </RefAddresses>
   </Reference>
+  <Reference name="ItemcatParamLov_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchItemCatLov/bpelprocessfetchitemcat_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaFetchItemCatLov/BPELProcessFetchItemCat}bpelprocessfetchitemcat_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaFetchItemCatLov/BPELProcessFetchItemCat}bpelprocessfetchitemcat_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaFetchItemCatLov/BPELProcessFetchItemCat}bpelprocessfetchitemcat_client_ep">
+                <port name="BPELProcessFetchItemCat_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaFetchItemCatLov/BPELProcessFetchItemCat}BPELProcessFetchItemCatBinding">
+                  <soap addressUrl="http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchItemCatLov/bpelprocessfetchitemcat_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
 </References>

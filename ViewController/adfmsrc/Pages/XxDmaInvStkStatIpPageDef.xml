@@ -38,6 +38,9 @@
     <accessorIterator MasterBinding="GlParamLov_WLIterator" Binds="process_parameters" RangeSize="25"
                       DataControl="GlParamLov_WL" BeanClass="GlParamLov_WL.Types.process"
                       id="process_parametersIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ItemcatParamLov_DC" id="ItemcatParamLov_DCIterator"/>
+    <accessorIterator id="ouListIterator3" MasterBinding="ItemcatParamLov_DCIterator" Binds="ouList" RangeSize="-1"
+                      DataControl="ItemcatParamLov_DC" BeanClass="java.lang.String"/>
   </executables>
   <bindings>
     <methodAction id="process1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
@@ -107,16 +110,6 @@
         <Item Value="process1_inventoryOrg"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="variables" id="itemCategoryFrom">
-      <AttrNames>
-        <Item Value="process1_itemCategoryFrom"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="variables" id="itemCategoryTo">
-      <AttrNames>
-        <Item Value="process1_itemCategoryTo"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="variables" id="itemTo">
       <AttrNames>
         <Item Value="process1_itemTo"/>
@@ -175,5 +168,55 @@
         <Item Value="element"/>
       </ListDisplayAttrNames>
     </list>
+    <list IterBinding="variables" id="itemCategoryFrom" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="ouListIterator3">
+      <AttrNames>
+        <Item Value="process1_itemCategoryFrom"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="itemCategoryTo" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="ouListIterator3">
+      <AttrNames>
+        <Item Value="process1_itemCategoryTo"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <tree IterBinding="ouListIterator3" id="ouList2">
+      <nodeDefinition Name="ouList20">
+        <AttrNames>
+          <Item Value="element"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="variables" id="element" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="ouListIterator3">
+      <AttrNames>
+        <Item Value="process1_itemCategoryFrom"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <tree IterBinding="ouListIterator3" id="ouList3">
+      <nodeDefinition Name="ouList30">
+        <AttrNames>
+          <Item Value="element"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
