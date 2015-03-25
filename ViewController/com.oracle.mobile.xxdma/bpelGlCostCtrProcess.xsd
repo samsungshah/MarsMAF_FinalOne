@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess" xmlns:s1="http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.oracle.com/XXDMA/Common">
+  <element name="process">
+    <complexType>
+      <sequence>
+        <element name="CallingSystemName" type="string"/>
+        <element name="CallingInterfaceName" type="string"/>
+        <element name="DebugFlag" type="string"/>
+        <element name="UserId" type="string"/>
+        <element name="RespId" type="string"/>
+        <element name="RespApplId" type="string"/>
+        <element name="OperatingUnit" type="string" nillable="false"/>
+        <element name="FromPeriod" type="string"/>
+        <element name="ToPeriod" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="processResponse">
+    <complexType>
+      <sequence>
+        <element name="GLResponse" type="s1:GLResponseType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+        <element name="returnCode" type="string"/>
+        <element name="returnMsg" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="GLResponseType">
+    <sequence>
+      <element name="BalancingSegment" type="string" minOccurs="0" nillable="true"/>
+      <element name="CostCenterSegment" type="string" minOccurs="0" nillable="true"/>
+      <element name="ExpenseAmount" type="decimal" minOccurs="0" nillable="true"/>
+      <element name="RevenueAmount" type="decimal" minOccurs="0" nillable="true"/>
+    </sequence>
+  </complexType>
+</schema>

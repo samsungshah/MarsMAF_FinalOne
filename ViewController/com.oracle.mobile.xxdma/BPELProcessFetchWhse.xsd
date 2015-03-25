@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse" xmlns:s1="http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.oracle.com/XXDMA/Common">
+  <import namespace="http://www.oracle.com/XXDMA/Common" schemaLocation="CommonXSD.xsd"/>
+  <element name="process">
+    <complexType>
+      <sequence>
+        <element name="TransactionHeader" type="cmn:TransactionHeaderType"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="processResponse">
+    <complexType>
+      <sequence>
+        <element name="TransactionHeader" type="cmn:TransactionHeaderType"/>
+        <element name="WhseList" type="s1:WhseListType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="WhseListType">
+    <sequence>
+      <element name="Warehouse" type="string" minOccurs="0" nillable="true"/>
+    </sequence>
+  </complexType>
+</schema>

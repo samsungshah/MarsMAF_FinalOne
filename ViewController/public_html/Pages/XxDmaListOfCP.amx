@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="List Of Concurrent Programs" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" action="__back"/>
+        </amx:facet>
+        <amx:facet name="secondary"></amx:facet>
+        <amx:listView var="row" value="#{bindings.ConcProgObj.collectionModel}"
+                      fetchSize="#{bindings.ConcProgObj.rangeSize}"
+                      selectedRowKeys="#{bindings.ConcProgObj.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.ConcProgObj.collectionModel.makeCurrent}"
+                      dividerAttribute="ConcProgName" dividerMode="all" showMoreStrategy="autoScroll"
+                      bufferStrategy="viewport" id="lv1">
+            <amx:listItem id="li1">
+                <amx:commandLink text="#{row.ConcProgName}" styleClass="adfmf-listItem-captionText" id="cl1"/>
+            </amx:listItem>
+        </amx:listView>
+        
+               
+         
+    </amx:panelPage>
+</amx:view>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelGlCostCtrProcess" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaGlCostCtrExpRevReport!2.0/bpelGlCostCtrProcess.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="bpelGlCostCtrProcess">
+    <plnk:role name="bpelGlCostCtrProcessProvider">
+      <plnk:portType name="client:bpelGlCostCtrProcess"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess"
+              schemaLocation="bpelGlCostCtrProcess.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="bpelGlCostCtrProcessRequestMessage">
+    <wsdl:part name="payload" element="client:process"/>
+  </wsdl:message>
+  <wsdl:message name="bpelGlCostCtrProcessResponseMessage">
+    <wsdl:part name="payload" element="client:processResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="bpelGlCostCtrProcess">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:bpelGlCostCtrProcessRequestMessage"/>
+      <wsdl:output message="client:bpelGlCostCtrProcessResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="bpelGlCostCtrProcessBinding" type="client:bpelGlCostCtrProcess">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bpelglcostctrprocess_client_ep">
+    <wsdl:port name="bpelGlCostCtrProcess_pt" binding="client:bpelGlCostCtrProcessBinding">
+      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/GlCostCtrExpRevRpt_WLService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

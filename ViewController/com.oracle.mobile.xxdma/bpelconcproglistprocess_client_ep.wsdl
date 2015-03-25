@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelConcProgListProcess" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaFndConcProgListReport/bpelConcProgListProcess" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XXDMA/XxDmaFndConcProgListReport/bpelConcProgListProcess" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFndConcProgListReport!1.0/bpelConcProgListProcess.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="bpelConcProgListProcess">
+    <plnk:role name="bpelConcProgListProcessProvider">
+      <plnk:portType name="client:bpelConcProgListProcess"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://xmlns.oracle.com/XXDMA/XxDmaFndConcProgListReport/bpelConcProgListProcess"
+              schemaLocation="bpelConcProgListProcess.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="bpelConcProgListProcessRequestMessage">
+    <wsdl:part name="payload" element="client:process"/>
+  </wsdl:message>
+  <wsdl:message name="bpelConcProgListProcessResponseMessage">
+    <wsdl:part name="payload" element="client:processResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="bpelConcProgListProcess">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:bpelConcProgListProcessRequestMessage"/>
+      <wsdl:output message="client:bpelConcProgListProcessResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="bpelConcProgListProcessBinding" type="client:bpelConcProgListProcess">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bpelconcproglistprocess_client_ep">
+    <wsdl:port name="bpelConcProgListProcess_pt" binding="client:bpelConcProgListProcessBinding">
+      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/ListOfCP_WLService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaLoginPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="process_Return" IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.process.result}"/>
+      <variable Type="java.lang.String" Name="process_userName" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_password" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="OracleEbisAuth_WL" InstanceName="data.OracleEbisAuth_WL"
+                  ReturnName="data.OracleEbisAuth_WL.methodResults.process_OracleEbisAuth_WL_process_result">
+      <NamedData NDName="userName" NDType="java.lang.String" NDValue="${bindings.process_userName}"/>
+      <NamedData NDName="password" NDType="java.lang.String" NDValue="${bindings.process_password}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="userName">
+      <AttrNames>
+        <Item Value="process_userName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="password">
+      <AttrNames>
+        <Item Value="process_password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="Return">
+      <AttrNames>
+        <Item Value="process_Return"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

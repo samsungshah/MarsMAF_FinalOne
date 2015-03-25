@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/XXDMA/XXDmaPoSpendReport/BPELPoSpendReport" xmlns:s1="http://xmlns.oracle.com/XXDMA/XXDmaPoSpendReport/BPELPoSpendReport" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.oracle.com/XXDMA/Common">
+  <import namespace="http://www.oracle.com/XXDMA/Common" schemaLocation="CommonXSD.xsd"/>
+  <element name="process">
+    <complexType>
+      <sequence>
+        <element name="P_SPEND_PERIOD_FROM" type="string"/>
+        <element name="P_SPEND_PERIOD_TO" type="string"/>
+        <element name="P_OPERATING_UNIT" type="string"/>
+        <element name="CallingSystemName" type="string"/>
+        <element name="CallingInterfaceName" type="string"/>
+        <element name="DebugFlag" type="string"/>
+        <element name="UserId" type="string"/>
+        <element name="RespId" type="string"/>
+        <element name="RespApplId" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="processResponse">
+    <complexType>
+      <sequence>
+        <element name="ReturnMessage" type="string" minOccurs="0" nillable="true"/>
+        <element name="PoSpendResponse" type="s1:POSpendResponseType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+        <element name="returnCode" type="string"/>
+        <element name="returnMsg" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="POSpendResponseType">
+    <sequence>
+      <element name="SPENDVALUE" type="decimal" minOccurs="0" nillable="true"/>
+      <element name="SPENDCATEGORY" type="string" minOccurs="0" nillable="true"/>
+      <element name="SPEND_PERIOD_FROM" type="string" minOccurs="0" nillable="true"/>
+      <element name="SPEND_PERIOD_TO" type="string" minOccurs="0" nillable="true"/>
+      <element name="OPERATING_UNIT" type="string" minOccurs="0" nillable="true"/>
+    </sequence>
+  </complexType>
+</schema>

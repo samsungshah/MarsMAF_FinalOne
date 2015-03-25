@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaOntShipWarOpPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="process.result" DataControl="ONTShipWarRpt_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.ONTShipWarRpt_WL.process_Result" id="processIterator"/>
+    <accessorIterator MasterBinding="processIterator" Binds="ShippingResponse" RangeSize="-1"
+                      DataControl="ONTShipWarRpt_WL"
+                      BeanClass="com.oracle.mobile.xxdma.ONTShipWarRpt_WL.process_Result.ShippingResponse"
+                      id="ShippingResponseIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="ONTShipWarRpt_WL" InstanceName="data.ONTShipWarRpt_WL"
+                  ReturnName="data.ONTShipWarRpt_WL.methodResults.process_ONTShipWarRpt_WL_process_result">
+      <NamedData NDName="CallingSystemName" NDType="java.lang.String"/>
+      <NamedData NDName="CallingInterfaceName" NDType="java.lang.String"/>
+      <NamedData NDName="DebugFlag" NDType="java.lang.String"/>
+      <NamedData NDName="UserId" NDType="java.lang.String"/>
+      <NamedData NDName="RespId" NDType="java.lang.String"/>
+      <NamedData NDName="RespApplId" NDType="java.lang.String"/>
+      <NamedData NDName="Warehouse" NDType="java.lang.String"/>
+      <NamedData NDName="BucketDays" NDType="java.lang.Integer"/>
+      <NamedData NDName="OperatingUnit" NDType="java.lang.String"/>
+      <NamedData NDName="GroupBy" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="ShippingResponseIterator" id="ShippingResponse">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.ONTShipWarRpt_WL.process_Result.ShippingResponse"
+                      Name="ShippingResponse0">
+        <AttrNames>
+          <Item Value="NoOfSalesOrders"/>
+          <Item Value="Warehouse"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

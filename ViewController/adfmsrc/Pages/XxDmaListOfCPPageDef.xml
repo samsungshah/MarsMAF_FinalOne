@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaListOfCPPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="process.result" DataControl="ListOfCP_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.ListOfCP_WL.process_Result" id="processIterator"/>
+    <accessorIterator MasterBinding="processIterator" Binds="ConcProgObj" RangeSize="25" DataControl="ListOfCP_WL"
+                      BeanClass="com.oracle.mobile.xxdma.ListOfCP_WL.process_Result.ConcProgObj"
+                      id="ConcProgObjIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="ListOfCP_WL" InstanceName="data.ListOfCP_WL"
+                  ReturnName="data.ListOfCP_WL.methodResults.process_ListOfCP_WL_process_result">
+      <NamedData NDName="userId" NDType="java.lang.String"/>
+      <NamedData NDName="respId" NDValue="#{pageFlowScope.RespId}" NDType="java.lang.String"/>
+      <NamedData NDName="applId" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="ConcProgObjIterator" id="ConcProgObj">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.ListOfCP_WL.process_Result.ConcProgObj" Name="ConcProgObj0">
+        <AttrNames>
+          <Item Value="ConcProgName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ConcProgObjIterator" id="ConcProgObj1">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.ListOfCP_WL.process_Result.ConcProgObj" Name="ConcProgObj10">
+        <AttrNames>
+          <Item Value="ConcProgName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

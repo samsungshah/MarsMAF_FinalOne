@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet" xmlns:ns0="http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="process">
+    <complexType>
+      <sequence>
+        <element name="input" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="processResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:resultOut" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="resultOut">
+    <sequence>
+      <element name="usr_user_name" type="string"/>
+      <element name="usr_user_id" type="decimal"/>
+      <element name="user_Resp_responsibility_id" type="decimal"/>
+      <element name="user_Resp_responsibility_application_id" type="decimal"/>
+      <element name="resp_responsibility_name" type="string"/>
+      <element name="resp_responsibility_key" type="string"/>
+      <element name="app_application_short_name" type="string"/>
+      <element name="app_product" type="string"/>
+    </sequence>
+  </complexType>
+</schema>

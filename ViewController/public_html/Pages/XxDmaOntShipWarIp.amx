@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Report Parameters" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" action="__back"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+    </amx:facet>
+    <amx:panelFormLayout id="pfl1">
+      <amx:inputText value="#{bindings.CallingSystemName.inputValue}"
+                     label="#{bindings.CallingSystemName.hints.label}" id="it9"/>
+      <amx:inputText value="#{bindings.CallingInterfaceName.inputValue}"
+                     label="#{bindings.CallingInterfaceName.hints.label}" id="it10"/>
+      <amx:inputText value="#{bindings.DebugFlag.inputValue}" label="#{bindings.DebugFlag.hints.label}" id="it4"/>
+      <amx:inputText value="#{bindings.UserId.inputValue}" label="#{bindings.UserId.hints.label}" id="it8"/>
+      <amx:inputText value="#{bindings.RespId.inputValue}" label="#{bindings.RespId.hints.label}" id="it2"/>
+      <amx:inputText value="#{bindings.RespApplId.inputValue}" label="#{bindings.RespApplId.hints.label}" id="it6"/>
+      <amx:inputText value="#{bindings.Warehouse.inputValue}" label="#{bindings.Warehouse.hints.label}" id="it3"/>
+      <amx:inputText value="#{bindings.BucketDays.inputValue}" label="#{bindings.BucketDays.hints.label}" id="it5">
+        <amx:convertNumber groupingUsed="false" id="cn1"/>
+      </amx:inputText>
+      <amx:inputText value="#{bindings.OperatingUnit.inputValue}" label="#{bindings.OperatingUnit.hints.label}"
+                     id="it1"/>
+      <amx:selectOneChoice value="#{bindings.ouList.inputValue}" label="#{bindings.ouList.label}" id="soc1">
+        <amx:selectItems value="#{bindings.ouList.items}" id="si1"/>
+      </amx:selectOneChoice>
+      <!-- <amx:inputText value="#{bindings.GroupBy.inputValue}" label="#{bindings.GroupBy.hints.label}" id="it7"/>-->
+    </amx:panelFormLayout>
+    <amx:commandButton actionListener="#{bindings.process.execute}" text="View Report"
+                       disabled="#{!bindings.process.enabled}" id="cb2" action="OntShipWarOp"/>
+  </amx:panelPage>
+</amx:view>

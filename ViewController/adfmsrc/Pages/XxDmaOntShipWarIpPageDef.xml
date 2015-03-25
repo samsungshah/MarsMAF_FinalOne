@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaOntShipWarIpPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="process_CallingSystemName" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_CallingInterfaceName" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_DebugFlag" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_UserId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_RespId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_RespApplId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_Warehouse" IsQueriable="false"/>
+      <variable Type="java.lang.Integer" Name="process_BucketDays" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_OperatingUnit" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_GroupBy" IsQueriable="false"/>
+    </variableIterator>
+    <methodIterator Binds="process.result" DataControl="ONTShipWarRpt_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.ONTShipWarRpt_WL.process_Result" id="processIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ONTShipWarGrpByLov_DC" id="ONTShipWarGrpByLov_DCIterator"/>
+    <accessorIterator MasterBinding="ONTShipWarGrpByLov_DCIterator" Binds="ouList" RangeSize="25"
+                      DataControl="ONTShipWarGrpByLov_DC" BeanClass="java.lang.String" id="ouListIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="ONTShipWarRpt_WL" InstanceName="data.ONTShipWarRpt_WL"
+                  ReturnName="data.ONTShipWarRpt_WL.methodResults.process_ONTShipWarRpt_WL_process_result">
+      <NamedData NDName="CallingSystemName" NDType="java.lang.String" NDValue="${bindings.process_CallingSystemName}"/>
+      <NamedData NDName="CallingInterfaceName" NDType="java.lang.String"
+                 NDValue="${bindings.process_CallingInterfaceName}"/>
+      <NamedData NDName="DebugFlag" NDType="java.lang.String" NDValue="${bindings.process_DebugFlag}"/>
+      <NamedData NDName="UserId" NDType="java.lang.String" NDValue="${bindings.process_UserId}"/>
+      <NamedData NDName="RespId" NDType="java.lang.String" NDValue="${bindings.process_RespId}"/>
+      <NamedData NDName="RespApplId" NDType="java.lang.String" NDValue="${bindings.process_RespApplId}"/>
+      <NamedData NDName="Warehouse" NDType="java.lang.String" NDValue="${bindings.process_Warehouse}"/>
+      <NamedData NDName="BucketDays" NDType="java.lang.Integer" NDValue="${bindings.process_BucketDays}"/>
+      <NamedData NDName="OperatingUnit" NDType="java.lang.String" NDValue="${bindings.process_OperatingUnit}"/>
+      <NamedData NDName="GroupBy" NDType="java.lang.String" NDValue="${bindings.process_GroupBy}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="CallingSystemName">
+      <AttrNames>
+        <Item Value="process_CallingSystemName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="CallingInterfaceName">
+      <AttrNames>
+        <Item Value="process_CallingInterfaceName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="DebugFlag">
+      <AttrNames>
+        <Item Value="process_DebugFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="UserId">
+      <AttrNames>
+        <Item Value="process_UserId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="RespId">
+      <AttrNames>
+        <Item Value="process_RespId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="RespApplId">
+      <AttrNames>
+        <Item Value="process_RespApplId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="Warehouse">
+      <AttrNames>
+        <Item Value="process_Warehouse"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="BucketDays">
+      <AttrNames>
+        <Item Value="process_BucketDays"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="OperatingUnit">
+      <AttrNames>
+        <Item Value="process_OperatingUnit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="GroupBy">
+      <AttrNames>
+        <Item Value="process_GroupBy"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ouListIterator" ListOperMode="navigation" ListIter="ouListIterator" id="ouList"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="element"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

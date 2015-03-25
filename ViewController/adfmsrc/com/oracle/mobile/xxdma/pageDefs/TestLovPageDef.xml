@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="TestLovPageDef"
+                Package="com.oracle.mobile.xxdma.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.Object" Name="process_TransactionHeader" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="root" RangeSize="25" DataControl="OuParamLov_WL" id="OuParamLov_WLIterator"/>
+    <accessorIterator MasterBinding="OuParamLov_WLIterator" Binds="process_parameters" RangeSize="25"
+                      DataControl="OuParamLov_WL" BeanClass="OuParamLov_WL.Types.process"
+                      id="process_parametersIterator"/>
+    <accessorIterator MasterBinding="process_parametersIterator" Binds="TransactionHeader" RangeSize="25"
+                      DataControl="OuParamLov_WL" BeanClass="OuParamLov_WL.Types.process.TransactionHeader"
+                      id="TransactionHeaderIterator"/>
+    <accessorIterator MasterBinding="TransactionHeaderIterator" Binds="Status" RangeSize="25"
+                      DataControl="OuParamLov_WL" BeanClass="OuParamLov_WL.Types.process.TransactionHeader.Status"
+                      id="StatusIterator"/>
+    <methodIterator Binds="process.result" DataControl="OuParamLov_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.OuParamLov_WL.process_Result" id="processIterator"/>
+    <accessorIterator MasterBinding="processIterator" Binds="OUObj" RangeSize="25" DataControl="OuParamLov_WL"
+                      BeanClass="com.oracle.mobile.xxdma.OuParamLov_WL.process_Result.OUObj" id="OUObjIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="GlParamLov_WL" id="GlParamLov_WLIterator"/>
+    <accessorIterator MasterBinding="GlParamLov_WLIterator" Binds="process_parameters" RangeSize="25"
+                      DataControl="GlParamLov_WL" BeanClass="GlParamLov_WL.Types.process"
+                      id="process_parametersIterator1"/>
+    <accessorIterator MasterBinding="process_parametersIterator1" Binds="TransactionHeader" RangeSize="25"
+                      DataControl="GlParamLov_WL" BeanClass="GlParamLov_WL.Types.process.TransactionHeader"
+                      id="TransactionHeaderIterator1"/>
+    <methodIterator Binds="process1.result" DataControl="GlParamLov_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.GlParamLov_WL.process_Result" id="process1Iterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="GlParamLov_DC" id="GlParamLov_DCIterator"/>
+    <accessorIterator MasterBinding="GlParamLov_DCIterator" Binds="periodList" RangeSize="-1"
+                      DataControl="GlParamLov_DC" BeanClass="java.lang.String" id="periodListIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="OuParamLov_DC" id="OuParamLov_DCIterator"/>
+    <accessorIterator MasterBinding="OuParamLov_DCIterator" Binds="ouList" RangeSize="-1" DataControl="OuParamLov_DC"
+                      BeanClass="java.lang.String" id="ouListIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="CallingSystemName">
+      <AttrNames>
+        <Item Value="CallingSystemName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="CallingInterfaceName">
+      <AttrNames>
+        <Item Value="CallingInterfaceName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="DebugFlag">
+      <AttrNames>
+        <Item Value="DebugFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="userId">
+      <AttrNames>
+        <Item Value="userId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="respId">
+      <AttrNames>
+        <Item Value="respId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="respApplId">
+      <AttrNames>
+        <Item Value="respApplId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StatusIterator" id="returnCode">
+      <AttrNames>
+        <Item Value="returnCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StatusIterator" id="returnMsg">
+      <AttrNames>
+        <Item Value="returnMsg"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="OuParamLov_WL" InstanceName="data.OuParamLov_WL"
+                  ReturnName="data.OuParamLov_WL.methodResults.process_OuParamLov_WL_process_result">
+      <NamedData NDName="TransactionHeader" NDType="java.lang.Object" NDValue="${bindings.process_TransactionHeader}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="TransactionHeader">
+      <AttrNames>
+        <Item Value="process_TransactionHeader"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OUObjIterator" id="OUName">
+      <AttrNames>
+        <Item Value="OUName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="OUObjIterator" id="OUObj">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.OuParamLov_WL.process_Result.OUObj" Name="OUObj0">
+        <AttrNames>
+          <Item Value="OUName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="processIterator" id="result">
+      <AttrNames>
+        <Item Value="result"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator1" id="CallingInterfaceName1">
+      <AttrNames>
+        <Item Value="CallingInterfaceName"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="process1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="GlParamLov_WL" InstanceName="data.GlParamLov_WL"
+                  ReturnName="data.GlParamLov_WL.methodResults.process_GlParamLov_WL_process_result">
+      <NamedData NDName="TransactionHeader" NDType="java.lang.Object"/>
+    </methodAction>
+    <tree IterBinding="process1Iterator" id="process_Result">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.GlParamLov_WL.process_Result" Name="process_Result0">
+        <AttrNames>
+          <Item Value="result"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="periodListIterator" ListOperMode="navigation" ListIter="periodListIterator" id="periodList"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="element"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="periodListIterator" id="element">
+      <AttrNames>
+        <Item Value="element"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="variables" id="element1" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="periodListIterator">
+      <AttrNames>
+        <Item Value="process_TransactionHeader"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="element2" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="periodListIterator">
+      <AttrNames>
+        <Item Value="process_TransactionHeader"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="element3" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="periodListIterator">
+      <AttrNames>
+        <Item Value="process_TransactionHeader"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="element4" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="ouListIterator">
+      <AttrNames>
+        <Item Value="process_TransactionHeader"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

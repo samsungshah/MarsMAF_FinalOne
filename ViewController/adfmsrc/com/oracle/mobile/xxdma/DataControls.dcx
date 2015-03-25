@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.1.3.13.52" id="DataControls"
+                    Package="com.oracle.mobile.xxdma">
+  <AdapterDataControl id="OracleEbisAuth_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.OracleEbisAuth_WL"
+                      BeanClass="com.oracle.mobile.xxdma.OracleEbisAuth_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="OracleEbisAuth_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelauthenticatelogin_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelauthenticatelogin_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaFndAuthenticateLogin/BPELAuthenticateLogin"
+                 connection="OracleEbisAuth_WL">
+          <port name="BPELAuthenticateLogin_pt">
+            <operation name="process">
+              <dataformat format="XML"/>
+            </operation>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ListOfResp_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="com.oracle.mobile.xxdma.ListOfResp_WL"
+                      BeanClass="com.oracle.mobile.xxdma.ListOfResp_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="ListOfResp_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelrespdet_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelrespdet_client_ep"
+                 namespace="http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet"
+                 connection="ListOfResp_WL">
+          <port name="bpelRespDet_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="PoSpendAnaRpt_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.PoSpendAnaRpt_WL"
+                      BeanClass="com.oracle.mobile.xxdma.PoSpendAnaRpt_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="PoSpendAnaRpt_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelpospendreport_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelpospendreport_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XXDmaPoSpendReport/BPELPoSpendReport"
+                 connection="PoSpendAnaRpt_WL">
+          <port name="BPELPoSpendReport_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="InvStockStatExpRev_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.InvStockStatExpRev_WL"
+                      BeanClass="com.oracle.mobile.xxdma.InvStockStatExpRev_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="InvStockStatExpRev_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelstockstatusbyitem_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelstockstatusbyitem_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem"
+                 connection="InvStockStatExpRev_WL">
+          <port name="BPELStockStatusByItem_pt">
+            <operation name="process">
+              <dataformat format="XML"/>
+            </operation>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ListOfCP_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="com.oracle.mobile.xxdma.ListOfCP_WL"
+                      BeanClass="com.oracle.mobile.xxdma.ListOfCP_WL" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="ListOfCP_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelconcproglistprocess_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelconcproglistprocess_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaFndConcProgListReport/bpelConcProgListProcess"
+                 connection="ListOfCP_WL">
+          <port name="bpelConcProgListProcess_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="OuParamLov_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="com.oracle.mobile.xxdma.OuParamLov_WL"
+                      BeanClass="com.oracle.mobile.xxdma.OuParamLov_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="OuParamLov_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpeloulovprocess_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpeloulovprocess_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaFndOULov/bpelOULovProcess" connection="OuParamLov_WL">
+          <port name="bpelOULovProcess_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="OuParamLov_DC" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.dc.OuParamLov_DC"
+                      BeanClass="com.oracle.mobile.xxdma.dc.OuParamLov_DC"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <bean-definition BeanClass="com.oracle.mobile.xxdma.dc.OuParamLov_DC"
+                       DataControlHandler="oracle.adf.model.adapter.bean.DataFilterHandler" AccessMode="scrollable"
+                       EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ItemParamLov_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.ItemParamLov_WL"
+                      BeanClass="com.oracle.mobile.xxdma.ItemParamLov_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="ItemParamLov_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelprocessitemslov_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelprocessitemslov_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaFetchInvItemsLov/BPELProcessItemsLov"
+                 connection="ItemParamLov_WL">
+          <port name="BPELProcessItemsLov_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ItemParamLov_DC" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.dc.ItemParamLov_DC"
+                      BeanClass="com.oracle.mobile.xxdma.dc.ItemParamLov_DC"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <bean-definition BeanClass="com.oracle.mobile.xxdma.dc.ItemParamLov_DC"
+                       DataControlHandler="oracle.adf.model.adapter.bean.DataFilterHandler" AccessMode="scrollable"
+                       EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="SubinvParamLov_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.SubinvParamLov_WL"
+                      BeanClass="com.oracle.mobile.xxdma.SubinvParamLov_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="SubinvParamLov_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelprocesssecinv_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelprocesssecinv_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaFetchSecInvLov/BPELProcessSecInv"
+                 connection="SubinvParamLov_WL">
+          <port name="BPELProcessSecInv_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="SubinvParamLov_DC" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.dc.SubinvParamLov_DC"
+                      BeanClass="com.oracle.mobile.xxdma.dc.SubinvParamLov_DC"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <bean-definition BeanClass="com.oracle.mobile.xxdma.dc.SubinvParamLov_DC"
+                       DataControlHandler="oracle.adf.model.adapter.bean.DataFilterHandler" AccessMode="scrollable"
+                       EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ONTShipWarGrpByLov_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.ONTShipWarGrpByLov_WL"
+                      BeanClass="com.oracle.mobile.xxdma.ONTShipWarGrpByLov_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="ONTShipWarGrpByLov_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelprocessfetchgroupbylov_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelprocessfetchgroupbylov_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaFetchGroupByLov/BPELProcessFetchGroupByLov"
+                 connection="ONTShipWarGrpByLov_WL">
+          <port name="BPELProcessFetchGroupByLov_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ONTShipWaByWarLov_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.ONTShipWaByWarLov_WL"
+                      BeanClass="com.oracle.mobile.xxdma.ONTShipWaByWarLov_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="ONTShipWaByWarLov_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelprocessfetchwhse_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelprocessfetchwhse_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse"
+                 connection="ONTShipWaByWarLov_WL">
+          <port name="BPELProcessFetchWhse_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ONTShipWarRpt_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.ONTShipWarRpt_WL"
+                      BeanClass="com.oracle.mobile.xxdma.ONTShipWarRpt_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="ONTShipWarRpt_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelshippingreport_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelshippingreport_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaOntShippingReport/BPELShippingReport"
+                 connection="ONTShipWarRpt_WL">
+          <port name="BPELShippingReport_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ONTShipWarGrpByLov_DC" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.dc.ONTShipWarGrpByLov_DC"
+                      BeanClass="com.oracle.mobile.xxdma.dc.ONTShipWarGrpByLov_DC"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <bean-definition BeanClass="com.oracle.mobile.xxdma.dc.ONTShipWarGrpByLov_DC"
+                       DataControlHandler="oracle.adf.model.adapter.bean.DataFilterHandler" AccessMode="scrollable"
+                       EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="InvorgParamLov_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.InvorgParamLov_WL"
+                      BeanClass="com.oracle.mobile.xxdma.InvorgParamLov_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="InvorgParamLov_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelprocessfetchwhse_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelprocessfetchwhse_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse"
+                 connection="InvorgParamLov_WL">
+          <port name="BPELProcessFetchWhse_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="InvorgParamLov_DC" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.dc.InvorgParamLov_DC"
+                      BeanClass="com.oracle.mobile.xxdma.dc.InvorgParamLov_DC"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <bean-definition BeanClass="com.oracle.mobile.xxdma.dc.InvorgParamLov_DC"
+                       DataControlHandler="oracle.adf.model.adapter.bean.DataFilterHandler" AccessMode="scrollable"
+                       EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="GlCostCtrExpRevRpt_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.GlCostCtrExpRevRpt_WL"
+                      BeanClass="com.oracle.mobile.xxdma.GlCostCtrExpRevRpt_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="GlCostCtrExpRevRpt_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelglcostctrprocess_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelglcostctrprocess_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess"
+                 connection="GlCostCtrExpRevRpt_WL">
+          <port name="bpelGlCostCtrProcess_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="GlParamLov_WL" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="com.oracle.mobile.xxdma.GlParamLov_WL"
+                      BeanClass="com.oracle.mobile.xxdma.GlParamLov_WL"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="GlParamLov_WL" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.oracle.mobile.xxdma/bpelglperiodlovprocess_client_ep.wsdl" ensureKeyAttribute="true"
+                  useWSDLIdentity="true" dcStructureVersion="2" UsePersistedStructure="false">
+        <service name="bpelglperiodlovprocess_client_ep"
+                 namespace="http://xmlns.oracle.com/XXDMA/XxDmaGLPeriodLov/bpelGLPeriodLovProcess"
+                 connection="GlParamLov_WL">
+          <port name="bpelGLPeriodLovProcess_pt">
+            <operation name="process"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="GlParamLov_DC" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.dc.GlParamLov_DC"
+                      BeanClass="com.oracle.mobile.xxdma.dc.GlParamLov_DC"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <bean-definition BeanClass="com.oracle.mobile.xxdma.dc.GlParamLov_DC"
+                       DataControlHandler="oracle.adf.model.adapter.bean.DataFilterHandler" xmlns="http://xmlns.oracle.com/adfm/adapter/bean" AccessMode="scrollable"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

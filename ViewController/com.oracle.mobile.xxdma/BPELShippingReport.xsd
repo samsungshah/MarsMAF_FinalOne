@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaOntShippingReport/BPELShippingReport" xmlns:s1="http://xmlns.oracle.com/XXDMA/XxDmaOntShippingReport/BPELShippingReport" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="process">
+    <complexType>
+      <sequence>
+        <element name="CallingSystemName" type="string"/>
+        <element name="CallingInterfaceName" type="string"/>
+        <element name="DebugFlag" type="string"/>
+        <element name="UserId" type="string"/>
+        <element name="RespId" type="string"/>
+        <element name="RespApplId" type="string"/>
+        <element name="Warehouse" type="string"/>
+        <element name="BucketDays" type="integer"/>
+        <element name="OperatingUnit" type="string"/>
+        <element name="GroupBy" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="processResponse">
+    <complexType>
+      <sequence>
+        <element name="ShippingResponse" type="s1:ShippingResponseType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+        <element name="returnCode" type="string"/>
+        <element name="returnMsg" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="ShippingResponseType">
+    <sequence>
+      <element name="Warehouse" type="string" minOccurs="0" nillable="true"/>
+      <element name="NoOfSalesOrders" type="decimal" minOccurs="0" nillable="true"/>
+      <element name="SalesOrderValue" type="decimal" minOccurs="0" nillable="true"/>
+      <element name="ItemQuantity" type="decimal" minOccurs="0" nillable="true"/>
+      <element name="ShipmentDate" type="date" minOccurs="0" nillable="true"/>
+    </sequence>
+  </complexType>
+</schema>

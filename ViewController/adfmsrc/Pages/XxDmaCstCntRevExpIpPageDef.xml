@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaCstCntRevExpIpPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="process_CallingSystemName" IsQueriable="false" DefaultValue="MAF"/>
+      <variable Type="java.lang.String" Name="process_CallingInterfaceName" IsQueriable="false" DefaultValue="GL"/>
+      <variable Type="java.lang.String" Name="process_DebugFlag" IsQueriable="false" DefaultValue="Y"/>
+      <variable Type="java.lang.String" Name="process_UserId" IsQueriable="false"
+                DefaultValue="#{pageFlowScope.UserId}"/>
+      <variable Type="java.lang.String" Name="process_RespId" IsQueriable="false"
+                DefaultValue="#{pageFlowScope.RespId}"/>
+      <variable Type="java.lang.String" Name="process_RespApplId" IsQueriable="false"
+                DefaultValue="#{pageFlowScope.ApplnId}"/>
+      <variable Type="java.lang.String" Name="process_OperatingUnit" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_FromPeriod" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_ToPeriod" IsQueriable="false"/>
+    </variableIterator>
+    <methodIterator Binds="process.result" DataControl="GlCostCtrExpRevRpt_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.GlCostCtrExpRevRpt_WL.process_Result" id="processIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="OuParamLov_DC" id="OuParamLov_DCIterator"/>
+    <accessorIterator MasterBinding="OuParamLov_DCIterator" Binds="ouList" RangeSize="-1" DataControl="OuParamLov_DC"
+                      BeanClass="java.lang.String" id="ouListIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="GlParamLov_DC" id="GlParamLov_DCIterator"/>
+    <accessorIterator id="periodListIterator" MasterBinding="GlParamLov_DCIterator" Binds="periodList" RangeSize="-1"
+                      DataControl="GlParamLov_DC" BeanClass="java.lang.String"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="GlCostCtrExpRevRpt_WL"
+                  InstanceName="data.GlCostCtrExpRevRpt_WL"
+                  ReturnName="data.GlCostCtrExpRevRpt_WL.methodResults.process_GlCostCtrExpRevRpt_WL_process_result">
+      <NamedData NDName="CallingSystemName" NDType="java.lang.String" NDValue="${bindings.process_CallingSystemName}"/>
+      <NamedData NDName="CallingInterfaceName" NDType="java.lang.String"
+                 NDValue="${bindings.process_CallingInterfaceName}"/>
+      <NamedData NDName="DebugFlag" NDType="java.lang.String" NDValue="${bindings.process_DebugFlag}"/>
+      <NamedData NDName="UserId" NDType="java.lang.String" NDValue="${bindings.process_UserId}"/>
+      <NamedData NDName="RespId" NDType="java.lang.String" NDValue="${bindings.process_RespId}"/>
+      <NamedData NDName="RespApplId" NDType="java.lang.String" NDValue="${bindings.process_RespApplId}"/>
+      <NamedData NDName="OperatingUnit" NDType="java.lang.String" NDValue="${bindings.process_OperatingUnit}"/>
+      <NamedData NDName="FromPeriod" NDType="java.lang.String" NDValue="${bindings.process_FromPeriod}"/>
+      <NamedData NDName="ToPeriod" NDType="java.lang.String" NDValue="${bindings.process_ToPeriod}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="CallingSystemName">
+      <AttrNames>
+        <Item Value="process_CallingSystemName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="CallingInterfaceName">
+      <AttrNames>
+        <Item Value="process_CallingInterfaceName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="DebugFlag">
+      <AttrNames>
+        <Item Value="process_DebugFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="UserId">
+      <AttrNames>
+        <Item Value="process_UserId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="RespId">
+      <AttrNames>
+        <Item Value="process_RespId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="RespApplId">
+      <AttrNames>
+        <Item Value="process_RespApplId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="OperatingUnit">
+      <AttrNames>
+        <Item Value="process_OperatingUnit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="FromPeriod">
+      <AttrNames>
+        <Item Value="process_FromPeriod"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="ToPeriod">
+      <AttrNames>
+        <Item Value="process_ToPeriod"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="variables" id="element" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="ouListIterator"
+          NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+          NullValueFlag="start">
+      <AttrNames>
+        <Item Value="process_OperatingUnit"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="element1" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="periodListIterator">
+      <AttrNames>
+        <Item Value="process_FromPeriod"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="element2" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="periodListIterator">
+      <AttrNames>
+        <Item Value="process_ToPeriod"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

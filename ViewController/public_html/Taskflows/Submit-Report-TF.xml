@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="Submit-Report-TF">
+  <default-activity>VerifyAuth</default-activity>
+    <input-parameter-definition id="__4">
+      <name>AuthValue</name>
+      <value>#{pageFlowScope.AuthValue}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__3">
+      <name>Username</name>
+      <value>#{pageFlowScope.Username}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <router id="VerifyAuth">
+      <case id="__6">
+        <expression>#{pageFlowScope.AuthValue=='Y'}</expression>
+        <outcome>GoToResp</outcome>
+      </case>
+      <case id="__7">
+        <expression>#{pageFlowScope.AuthValue=='N'}</expression>
+        <outcome>Back</outcome>
+      </case>
+      <default-outcome>Back</default-outcome>
+    </router>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome>
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <view id="XxDmaListOfResp">
+      <page>/Pages/XxDmaListOfResp.amx</page>
+    </view>
+    <view id="XxDmaTypeOfRpt">
+      <page>/Pages/XxDmaTypeOfRpt.amx</page>
+    </view>
+    <task-flow-call id="Inbuilt-Rpt-Disp-TF">
+      <task-flow-reference>
+        <document>/Taskflows/Inbuilt-Rpt-Disp-TF.xml</document>
+        <id>Inbuilt-Rpt-Disp-TF</id>
+      </task-flow-reference>
+      <input-parameter id="__8">
+        <name>UserId</name>
+        <value>#{pageFlowScope.UserId}</value>
+      </input-parameter>
+      <input-parameter id="__9">
+        <name>RespId</name>
+        <value>#{pageFlowScope.RespId}</value>
+      </input-parameter>
+      <input-parameter id="__15">
+        <name>ApplnId</name>
+        <value>#{pageFlowScope.ApplnId}</value>
+      </input-parameter>
+    </task-flow-call>
+    <task-flow-call id="Oracle-Rpt-Disp-TF">
+      <task-flow-reference>
+        <document>/Taskflows/Oracle-Rpt-Disp-TF.xml</document>
+        <id>Oracle-Rpt-Disp-TF</id>
+      </task-flow-reference>
+            <input-parameter id="__16">
+        <name>UserId</name>
+        <value>#{pageFlowScope.UserId}</value>
+      </input-parameter>
+      <input-parameter id="__17">
+        <name>RespId</name>
+        <value>#{pageFlowScope.RespId}</value>
+      </input-parameter>
+      <input-parameter id="__18">
+        <name>ApplnId</name>
+        <value>#{pageFlowScope.ApplnId}</value>
+      </input-parameter>
+    </task-flow-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>VerifyAuth</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>Back</from-outcome>
+        <to-activity-id>taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>GoToResp</from-outcome>
+        <to-activity-id>XxDmaListOfResp</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>XxDmaListOfResp</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>GoToTypeOfRpt</from-outcome>
+        <to-activity-id>XxDmaTypeOfRpt</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>XxDmaTypeOfRpt</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>GoToInbuilt</from-outcome>
+        <to-activity-id>Inbuilt-Rpt-Disp-TF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>GoToOracleRpt</from-outcome>
+        <to-activity-id>Oracle-Rpt-Disp-TF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

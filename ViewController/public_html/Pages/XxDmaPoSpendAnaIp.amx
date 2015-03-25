@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Submit Report" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" action="__back"/>
+        </amx:facet>
+        <amx:facet name="secondary"></amx:facet>
+        <amx:listView id="lv2" styleClass="adfmf-listView-insetList">
+            <amx:listItem id="li6" showLinkIcon="false">
+                <amx:panelFormLayout id="pf45">
+                    <amx:selectOneChoice value="#{bindings.element.inputValue}" label="Operating Unit" id="soc3">
+                        <amx:selectItems value="#{bindings.element.items}" id="si3"/>
+                    </amx:selectOneChoice>
+                </amx:panelFormLayout>
+            </amx:listItem>
+        </amx:listView>
+        <amx:inputText value="#{bindings.P_SPEND_PERIOD_FROM2.inputValue}"
+                       label="Date From " id="it1"/>
+        <amx:inputText value="#{bindings.P_SPEND_PERIOD_TO2.inputValue}"
+                       label="Date To" id="it2"/>
+        <amx:panelLabelAndMessage label="#{bindings.P_OPERATING_UNIT2.hints.label}" id="plam1">
+            <amx:outputText value="#{bindings.P_OPERATING_UNIT2.inputValue}" id="ot2"/>
+        </amx:panelLabelAndMessage>
+        <amx:commandButton actionListener="#{bindings.process3.execute}" text="Submit Report"
+                           disabled="#{!bindings.process3.enabled}" id="cb2" action="PoSpendAnaOP"/>
+    </amx:panelPage>
+</amx:view>

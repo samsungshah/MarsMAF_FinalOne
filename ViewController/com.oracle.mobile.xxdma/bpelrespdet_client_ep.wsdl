@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelRespDet" targetNamespace="http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaGetRespDet!1.0/bpelRespDet.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="bpelRespDet">
+    <plnk:role name="bpelRespDetProvider">
+      <plnk:portType name="client:bpelRespDet"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet"
+              schemaLocation="bpelRespDet.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="bpelRespDetRequestMessage">
+    <wsdl:part name="payload" element="client:process"/>
+  </wsdl:message>
+  <wsdl:message name="bpelRespDetResponseMessage">
+    <wsdl:part name="payload" element="client:processResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="bpelRespDet">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:bpelRespDetRequestMessage"/>
+      <wsdl:output message="client:bpelRespDetResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="bpelRespDetBinding" type="client:bpelRespDet">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bpelrespdet_client_ep">
+    <wsdl:port name="bpelRespDet_pt" binding="client:bpelRespDetBinding">
+      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/ListOfResp_WLService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

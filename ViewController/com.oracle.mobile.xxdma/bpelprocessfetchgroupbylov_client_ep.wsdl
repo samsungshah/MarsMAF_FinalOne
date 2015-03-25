@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="BPELProcessFetchGroupByLov" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaFetchGroupByLov/BPELProcessFetchGroupByLov" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XXDMA/XxDmaFetchGroupByLov/BPELProcessFetchGroupByLov" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchGroupByLov!1.0/BPELProcessFetchGroupByLov.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="BPELProcessFetchGroupByLov">
+    <plnk:role name="BPELProcessFetchGroupByLovProvider">
+      <plnk:portType name="client:BPELProcessFetchGroupByLov"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://xmlns.oracle.com/XXDMA/XxDmaFetchGroupByLov/BPELProcessFetchGroupByLov"
+              schemaLocation="BPELProcessFetchGroupByLov.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="BPELProcessFetchGroupByLovRequestMessage">
+    <wsdl:part name="payload" element="client:process"/>
+  </wsdl:message>
+  <wsdl:message name="BPELProcessFetchGroupByLovResponseMessage">
+    <wsdl:part name="payload" element="client:processResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="BPELProcessFetchGroupByLov">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:BPELProcessFetchGroupByLovRequestMessage"/>
+      <wsdl:output message="client:BPELProcessFetchGroupByLovResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BPELProcessFetchGroupByLovBinding" type="client:BPELProcessFetchGroupByLov">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bpelprocessfetchgroupbylov_client_ep">
+    <wsdl:port name="BPELProcessFetchGroupByLov_pt" binding="client:BPELProcessFetchGroupByLovBinding">
+      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/ONTShipWarGrpByLov_WLService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

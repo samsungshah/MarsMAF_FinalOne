@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="BPELStockStatusByItem" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvStkStatusByItemReport!2.0/BPELStockStatusByItem.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="BPELStockStatusByItem">
+    <plnk:role name="BPELStockStatusByItemProvider">
+      <plnk:portType name="client:BPELStockStatusByItem"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem"
+              schemaLocation="BPELStockStatusByItem.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="BPELStockStatusByItemRequestMessage">
+    <wsdl:part name="payload" element="client:process"/>
+  </wsdl:message>
+  <wsdl:message name="BPELStockStatusByItemResponseMessage">
+    <wsdl:part name="payload" element="client:processResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="BPELStockStatusByItem">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:BPELStockStatusByItemRequestMessage"/>
+      <wsdl:output message="client:BPELStockStatusByItemResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BPELStockStatusByItemBinding" type="client:BPELStockStatusByItem">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bpelstockstatusbyitem_client_ep">
+    <wsdl:port name="BPELStockStatusByItem_pt" binding="client:BPELStockStatusByItemBinding">
+      <soap:address location="http://localhost:7101/MARS-ApplicationController-context-root/InvStockStatExpRev_WLService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

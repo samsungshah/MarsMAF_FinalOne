@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="List Of Reports" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" action="__back"/>
+        </amx:facet>
+        <amx:facet name="secondary"></amx:facet>
+        <amx:listView var="row" showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1">
+            <amx:listItem id="li1">
+                <amx:commandLink text="Cost Center Expense Revenue" styleClass="adfmf-listItem-captionText" id="cl1"
+                                 action="CstCntRevExpInp"/>
+            </amx:listItem>
+            <amx:listItem id="li2">
+                <amx:commandLink text="Shipping Warehouse Report" styleClass="adfmf-listItem-captionText" id="cl2"
+                                 action="OntShipWarIp"/>
+            </amx:listItem>
+            <amx:listItem id="li3">
+                <amx:commandLink text="PO Spend Analysis" styleClass="adfmf-listItem-captionText" id="cl3"
+                                 action="PoSpendAna"/>
+            </amx:listItem>
+            <amx:listItem id="li4">
+                <amx:commandLink text="Inventory Stock Status By Item" styleClass="adfmf-listItem-captionText" id="cl4"
+                                 action="InvStkStatIp"/>
+            </amx:listItem>
+             <amx:listItem id="li5">
+                <amx:commandLink text="test" styleClass="adfmf-listItem-captionText" id="c5"
+                                 action="test"/>
+            </amx:listItem>
+        </amx:listView>
+    </amx:panelPage>
+</amx:view>

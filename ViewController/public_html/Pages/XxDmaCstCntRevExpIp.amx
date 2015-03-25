@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Report Parameters" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" action="__back" text="Back"/>
+      <?audit suppress oracle.maf.warning-missing-shortDesc?>
+    </amx:facet>
+    <amx:listView id="lv1" styleClass="adfmf-listView-insetList">
+            <amx:listItem id="li5" showLinkIcon="false">
+                <?audit suppress oracle.maf.warning-missing-shortDesc?>
+                <amx:panelFormLayout id="pfl5">
+          <amx:selectOneChoice value="#{bindings.element.inputValue}" label="Operating Unit" id="soc1">
+            <?audit suppress oracle.ide.xml.wellformedness-error?>
+            <amx:selectItem  id="si5" value='""' label="">
+              <?audit suppress oracle.maf.warning-missing-label?>
+              </amx:selectItem>
+              <amx:selectItems value="#{bindings.element.items}" id="si1">
+              </amx:selectItems>
+          </amx:selectOneChoice>
+        </amx:panelFormLayout>
+            </amx:listItem>
+             <amx:listItem id="li6" showLinkIcon="false">
+                <?audit suppress oracle.maf.warning-missing-shortDesc?>
+                <amx:panelFormLayout id="pfl6">
+          <amx:selectOneChoice value="#{bindings.element1.inputValue}" label="From Period" id="soc2">
+          <?audit suppress oracle.ide.xml.wellformedness-error?>
+            <amx:selectItem  id="si7" value='""' label="">
+              <?audit suppress oracle.maf.warning-missing-label?>
+              </amx:selectItem>
+            <amx:selectItems value="#{bindings.element1.items}" id="si2"/>
+          </amx:selectOneChoice>
+        </amx:panelFormLayout>
+            </amx:listItem>
+            <amx:listItem id="li7" showLinkIcon="false">
+                <?audit suppress oracle.maf.warning-missing-shortDesc?>
+                <amx:panelFormLayout id="pfl7">
+          <amx:selectOneChoice value="#{bindings.element2.inputValue}" label="To Period" id="soc3">
+          <?audit suppress oracle.ide.xml.wellformedness-error?>
+            <amx:selectItem  id="si8" value='""' label="">
+              <?audit suppress oracle.maf.warning-missing-label?>
+              </amx:selectItem>
+            <amx:selectItems value="#{bindings.element2.items}" id="si3"/>
+          </amx:selectOneChoice>
+        </amx:panelFormLayout>
+            </amx:listItem>
+        </amx:listView>
+    <amx:panelFormLayout id="pfl1">
+      <amx:panelLabelAndMessage label="#{bindings.CallingSystemName.hints.label}" id="plam9" rendered="false">
+        <amx:outputText value="#{bindings.CallingSystemName.inputValue}" id="ot10"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.CallingInterfaceName.hints.label}" id="plam2" rendered="false">
+        <amx:outputText value="#{bindings.CallingInterfaceName.inputValue}" id="ot3"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.DebugFlag.hints.label}" id="plam6" rendered="false">
+        <amx:outputText value="#{bindings.DebugFlag.inputValue}" id="ot7"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.UserId.hints.label}" id="plam5" rendered="false">
+        <amx:outputText value="#{bindings.UserId.inputValue}" id="ot6"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.RespId.hints.label}" id="plam4" rendered="false">
+        <amx:outputText value="#{bindings.RespId.inputValue}" id="ot5"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.RespApplId.hints.label}" id="plam7" rendered="false">
+        <amx:outputText value="#{bindings.RespApplId.inputValue}" id="ot8"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.OperatingUnit.hints.label}" id="plam1" rendered="false">
+        <amx:outputText value="#{bindings.OperatingUnit.inputValue}" id="ot2"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.FromPeriod.hints.label}" id="plam3" rendered="false">
+        <amx:outputText value="#{bindings.FromPeriod.inputValue}" id="ot4"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.ToPeriod.hints.label}" id="plam8" rendered="false">
+        <amx:outputText value="#{bindings.ToPeriod.inputValue}" id="ot9"/>
+      </amx:panelLabelAndMessage>
+    </amx:panelFormLayout>
+    <amx:commandButton actionListener="#{bindings.process.execute}" text="Submit Report"
+                       disabled="#{!bindings.process.enabled}" id="cb2" action="CstCntRevExpOp"/>
+  </amx:panelPage>
+</amx:view>

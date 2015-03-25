@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="BPELProcessItemsLov" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaFetchInvItemsLov/BPELProcessItemsLov" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XXDMA/XxDmaFetchInvItemsLov/BPELProcessItemsLov" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchInvItemsLov!1.0/BPELProcessItemsLov.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="BPELProcessItemsLov">
+    <plnk:role name="BPELProcessItemsLovProvider">
+      <plnk:portType name="client:BPELProcessItemsLov"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://xmlns.oracle.com/XXDMA/XxDmaFetchInvItemsLov/BPELProcessItemsLov"
+              schemaLocation="BPELProcessItemsLov.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="BPELProcessItemsLovRequestMessage">
+    <wsdl:part name="payload" element="client:process"/>
+  </wsdl:message>
+  <wsdl:message name="BPELProcessItemsLovResponseMessage">
+    <wsdl:part name="payload" element="client:processResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="BPELProcessItemsLov">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:BPELProcessItemsLovRequestMessage"/>
+      <wsdl:output message="client:BPELProcessItemsLovResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BPELProcessItemsLovBinding" type="client:BPELProcessItemsLov">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bpelprocessitemslov_client_ep">
+    <wsdl:port name="BPELProcessItemsLov_pt" binding="client:BPELProcessItemsLovBinding">
+      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/ItemParamLov_WLService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

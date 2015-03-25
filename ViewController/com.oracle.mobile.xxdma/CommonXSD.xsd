@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.oracle.com/XXDMA/Common" targetNamespace="http://www.oracle.com/XXDMA/Common" elementFormDefault="qualified">
+  <xsd:complexType name="TransactionHeaderType">
+    <xsd:sequence>
+      <xsd:element name="CallingSystemName" type="xsd:normalizedString" maxOccurs="1" minOccurs="1"/>
+      <xsd:element name="CallingInterfaceName" type="xsd:normalizedString" maxOccurs="1" minOccurs="1"/>
+      <xsd:element name="DebugFlag" type="xsd:normalizedString" maxOccurs="1" minOccurs="1"/>
+      <xsd:element name="userId" type="xsd:integer" maxOccurs="1" minOccurs="1"/>
+      <xsd:element name="respId" type="xsd:integer" maxOccurs="1" minOccurs="1"/>
+      <xsd:element name="respApplId" type="xsd:integer" maxOccurs="1" minOccurs="1"/>
+      <xsd:element name="Status" type="tns:Status_Type" maxOccurs="1" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Status_Type">
+    <xsd:sequence>
+      <xsd:element name="returnCode" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+      <xsd:element name="returnMsg" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

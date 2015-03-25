@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.2.36" id="XxDmaPoSpendAnaOutputAMXPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="process.result" DataControl="PoSpendAnaRpt_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.PoSpendAnaRpt_WL.process_Result" id="processIterator"/>
+    <accessorIterator MasterBinding="processIterator" Binds="PoSpendResponse" RangeSize="-1"
+                      DataControl="PoSpendAnaRpt_WL"
+                      BeanClass="com.oracle.mobile.PoSpendAnaRpt_WL.process_Result.PoSpendResponse"
+                      id="PoSpendResponseIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="PoSpendAnaRpt_WL" InstanceName="data.PoSpendAnaRpt_WL"
+                  ReturnName="data.PoSpendAnaRpt_WL.methodResults.process_PoSpendAnaRpt_WL_process_result">
+      <NamedData NDName="P_SPEND_PERIOD_FROM" NDType="java.lang.String"/>
+      <NamedData NDName="P_SPEND_PERIOD_TO" NDType="java.lang.String"/>
+      <NamedData NDName="P_OPERATING_UNIT" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="PoSpendResponseIterator" id="PoSpendResponse">
+      <nodeDefinition DefName="com.oracle.mobile.PoSpendAnaRpt_WL.process_Result.PoSpendResponse"
+                      Name="PoSpendResponse0">
+        <AttrNames>
+          <Item Value="SPENDVALUE"/>
+          <Item Value="SPENDCATEGORY"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

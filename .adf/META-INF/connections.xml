@@ -1,0 +1,394 @@
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+  <Reference name="OracleEbisAuth_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://10.118.20.255:8001/soa-infra/services/default/XxDmaFndAuthenticateLogin/bpelauthenticatelogin_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaFndAuthenticateLogin/BPELAuthenticateLogin}bpelauthenticatelogin_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaFndAuthenticateLogin/BPELAuthenticateLogin}bpelauthenticatelogin_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaFndAuthenticateLogin/BPELAuthenticateLogin}bpelauthenticatelogin_client_ep">
+                <port name="BPELAuthenticateLogin_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaFndAuthenticateLogin/BPELAuthenticateLogin}BPELAuthenticateLoginBinding">
+                  <soap addressUrl="http://10.118.20.255:8001/soa-infra/services/default/XxDmaFndAuthenticateLogin/bpelauthenticatelogin_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="ListOfResp_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://10.118.20.255:8001/soa-infra/services/default/XxDmaGetRespDet/bpelrespdet_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet}bpelrespdet_client_ep">
+            <model name="{http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet}bpelrespdet_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet}bpelrespdet_client_ep">
+                <port name="bpelRespDet_pt"
+                      binding="{http://xmlns.oracle.com/XxDmaGetRespDet/XxDmaGetRespDet/bpelRespDet}bpelRespDetBinding">
+                  <soap addressUrl="http://10.118.20.255:8001/soa-infra/services/default/XxDmaGetRespDet/bpelrespdet_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="ListOfCP_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://10.118.20.255:8001/soa-infra/services/default/XxDmaFndConcProgListReport/bpelconcproglistprocess_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaFndConcProgListReport/bpelConcProgListProcess}bpelconcproglistprocess_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaFndConcProgListReport/bpelConcProgListProcess}bpelconcproglistprocess_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaFndConcProgListReport/bpelConcProgListProcess}bpelconcproglistprocess_client_ep">
+                <port name="bpelConcProgListProcess_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaFndConcProgListReport/bpelConcProgListProcess}bpelConcProgListProcessBinding">
+                  <soap addressUrl="http://10.118.20.255:8001/soa-infra/services/default/XxDmaFndConcProgListReport/bpelconcproglistprocess_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="OuParamLov_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://10.118.20.255:8001/soa-infra/services/default/XxDmaFndOULov/bpeloulovprocess_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaFndOULov/bpelOULovProcess}bpeloulovprocess_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaFndOULov/bpelOULovProcess}bpeloulovprocess_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaFndOULov/bpelOULovProcess}bpeloulovprocess_client_ep">
+                <port name="bpelOULovProcess_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaFndOULov/bpelOULovProcess}bpelOULovProcessBinding">
+                  <soap addressUrl="http://10.118.20.255:8001/soa-infra/services/default/XxDmaFndOULov/bpeloulovprocess_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="PoSpendAnaRpt_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://10.118.20.255:8001/soa-infra/services/default/XXDmaPoSpendReport/bpelpospendreport_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XXDmaPoSpendReport/BPELPoSpendReport}bpelpospendreport_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XXDmaPoSpendReport/BPELPoSpendReport}bpelpospendreport_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XXDmaPoSpendReport/BPELPoSpendReport}bpelpospendreport_client_ep">
+                <port name="BPELPoSpendReport_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XXDmaPoSpendReport/BPELPoSpendReport}BPELPoSpendReportBinding">
+                  <soap addressUrl="http://10.118.20.255:8001/soa-infra/services/default/XXDmaPoSpendReport/bpelpospendreport_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="InvStockStatExpRev_WL"
+             className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvStkStatusByItemReport/bpelstockstatusbyitem_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem}bpelstockstatusbyitem_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem}bpelstockstatusbyitem_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem}bpelstockstatusbyitem_client_ep">
+                <port name="BPELStockStatusByItem_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem}BPELStockStatusByItemBinding">
+                  <soap addressUrl="http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvStkStatusByItemReport/bpelstockstatusbyitem_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="ItemParamLov_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchInvItemsLov/bpelprocessitemslov_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaFetchInvItemsLov/BPELProcessItemsLov}bpelprocessitemslov_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaFetchInvItemsLov/BPELProcessItemsLov}bpelprocessitemslov_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaFetchInvItemsLov/BPELProcessItemsLov}bpelprocessitemslov_client_ep">
+                <port name="BPELProcessItemsLov_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaFetchInvItemsLov/BPELProcessItemsLov}BPELProcessItemsLovBinding">
+                  <soap addressUrl="http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchInvItemsLov/bpelprocessitemslov_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="SubinvParamLov_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchSecInvLov/bpelprocesssecinv_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaFetchSecInvLov/BPELProcessSecInv}bpelprocesssecinv_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaFetchSecInvLov/BPELProcessSecInv}bpelprocesssecinv_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaFetchSecInvLov/BPELProcessSecInv}bpelprocesssecinv_client_ep">
+                <port name="BPELProcessSecInv_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaFetchSecInvLov/BPELProcessSecInv}BPELProcessSecInvBinding">
+                  <soap addressUrl="http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchSecInvLov/bpelprocesssecinv_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="ONTShipWarGrpByLov_WL"
+             className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://ussltcsnl3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchGroupByLov/bpelprocessfetchgroupbylov_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaFetchGroupByLov/BPELProcessFetchGroupByLov}bpelprocessfetchgroupbylov_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaFetchGroupByLov/BPELProcessFetchGroupByLov}bpelprocessfetchgroupbylov_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaFetchGroupByLov/BPELProcessFetchGroupByLov}bpelprocessfetchgroupbylov_client_ep">
+                <port name="BPELProcessFetchGroupByLov_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaFetchGroupByLov/BPELProcessFetchGroupByLov}BPELProcessFetchGroupByLovBinding">
+                  <soap addressUrl="http://ussltcsnl3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFetchGroupByLov/bpelprocessfetchgroupbylov_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="ONTShipWaByWarLov_WL"
+             className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://ussltcsnl3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvFetchWhseLov/bpelprocessfetchwhse_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse}bpelprocessfetchwhse_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse}bpelprocessfetchwhse_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse}bpelprocessfetchwhse_client_ep">
+                <port name="BPELProcessFetchWhse_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse}BPELProcessFetchWhseBinding">
+                  <soap addressUrl="http://ussltcsnl3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvFetchWhseLov/bpelprocessfetchwhse_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="ONTShipWarRpt_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://ussltcsnl3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaOntShippingReport/bpelshippingreport_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaOntShippingReport/BPELShippingReport}bpelshippingreport_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaOntShippingReport/BPELShippingReport}bpelshippingreport_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaOntShippingReport/BPELShippingReport}bpelshippingreport_client_ep">
+                <port name="BPELShippingReport_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaOntShippingReport/BPELShippingReport}BPELShippingReportBinding">
+                  <soap addressUrl="http://ussltcsnl3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaOntShippingReport/bpelshippingreport_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="InvorgParamLov_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://ussltcsnl3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvFetchWhseLov/bpelprocessfetchwhse_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse}bpelprocessfetchwhse_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse}bpelprocessfetchwhse_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse}bpelprocessfetchwhse_client_ep">
+                <port name="BPELProcessFetchWhse_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse}BPELProcessFetchWhseBinding">
+                  <soap addressUrl="http://ussltcsnl3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvFetchWhseLov/bpelprocessfetchwhse_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="GlCostCtrExpRevRpt_WL"
+             className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://10.118.20.255:8001/soa-infra/services/default/XxDmaGlCostCtrExpRevReport/bpelglcostctrprocess_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess}bpelglcostctrprocess_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess}bpelglcostctrprocess_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess}bpelglcostctrprocess_client_ep">
+                <port name="bpelGlCostCtrProcess_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaGlCostCtrExpRevReport/bpelGlCostCtrProcess}bpelGlCostCtrProcessBinding">
+                  <soap addressUrl="http://10.118.20.255:8001/soa-infra/services/default/XxDmaGlCostCtrExpRevReport/bpelglcostctrprocess_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="GlParamLov_WL" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://10.118.20.255:8001/soa-infra/services/default/XxDmaGLPeriodLov/bpelglperiodlovprocess_client_ep?WSDL"
+                        service="{http://xmlns.oracle.com/XXDMA/XxDmaGLPeriodLov/bpelGLPeriodLovProcess}bpelglperiodlovprocess_client_ep">
+            <model name="{http://xmlns.oracle.com/XXDMA/XxDmaGLPeriodLov/bpelGLPeriodLovProcess}bpelglperiodlovprocess_client_ep"
+                   xmlns="http://oracle.com/ws/model">
+              <service name="{http://xmlns.oracle.com/XXDMA/XxDmaGLPeriodLov/bpelGLPeriodLovProcess}bpelglperiodlovprocess_client_ep">
+                <port name="bpelGLPeriodLovProcess_pt"
+                      binding="{http://xmlns.oracle.com/XXDMA/XxDmaGLPeriodLov/bpelGLPeriodLovProcess}bpelGLPeriodLovProcessBinding">
+                  <soap addressUrl="http://10.118.20.255:8001/soa-infra/services/default/XxDmaGLPeriodLov/bpelglperiodlovprocess_client_ep"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="process">
+                    <soap soapAction="process" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+</References>

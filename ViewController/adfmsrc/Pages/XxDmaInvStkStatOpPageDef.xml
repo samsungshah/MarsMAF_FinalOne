@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaInvStkStatOpPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="process1.result" DataControl="InvStockStatExpRev_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.InvStockStatExpRev_WL.process_Result" id="process1Iterator"/>
+    <accessorIterator MasterBinding="process1Iterator" Binds="StockStatusTypeResponse" RangeSize="-1"
+                      DataControl="InvStockStatExpRev_WL"
+                      BeanClass="com.oracle.mobile.xxdma.InvStockStatExpRev_WL.process_Result.StockStatusTypeResponse"
+                      id="StockStatusTypeResponseIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="InvStockStatExpRev_WL"
+                  InstanceName="data.InvStockStatExpRev_WL"
+                  ReturnName="data.InvStockStatExpRev_WL.methodResults.process_InvStockStatExpRev_WL_process_result">
+      <NamedData NDName="inventoryOrg" NDType="java.lang.String"/>
+      <NamedData NDName="subInventory" NDType="java.lang.String"/>
+      <NamedData NDName="itemCategoryFrom" NDType="java.lang.String"/>
+      <NamedData NDName="itemCategoryTo" NDType="java.lang.String"/>
+      <NamedData NDName="itemFrom" NDType="java.lang.String"/>
+      <NamedData NDName="itemTo" NDType="java.lang.String"/>
+      <NamedData NDName="asOnDate" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="process1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="InvStockStatExpRev_WL"
+                  InstanceName="data.InvStockStatExpRev_WL"
+                  ReturnName="data.InvStockStatExpRev_WL.methodResults.process_InvStockStatExpRev_WL_process_result">
+      <NamedData NDName="CallingSystemName" NDValue="MAF" NDType="java.lang.String"/>
+      <NamedData NDName="CallingInterfaceName" NDValue="INV" NDType="java.lang.String"/>
+      <NamedData NDName="DebugFlag" NDValue="Y" NDType="java.lang.String"/>
+      <NamedData NDName="UserId" NDValue="#{pageFlowScope.UserId}" NDType="java.lang.String"/>
+      <NamedData NDName="RespId" NDValue="#{pageFlowScope.RespId}" NDType="java.lang.String"/>
+      <NamedData NDName="RespApplId" NDValue="#{pageFlowScope.RespApplId}" NDType="java.lang.String"/>
+      <NamedData NDName="inventoryOrg" NDType="java.lang.String"/>
+      <NamedData NDName="subInventory" NDType="java.lang.String"/>
+      <NamedData NDName="itemCategoryFrom" NDType="java.lang.String"/>
+      <NamedData NDName="itemCategoryTo" NDType="java.lang.String"/>
+      <NamedData NDName="itemFrom" NDType="java.lang.String"/>
+      <NamedData NDName="itemTo" NDType="java.lang.String"/>
+      <NamedData NDName="asOnDate" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="StockStatusTypeResponseIterator" id="StockStatusTypeResponse">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.InvStockStatExpRev_WL.process_Result.StockStatusTypeResponse"
+                      Name="StockStatusTypeResponse0">
+        <AttrNames>
+          <Item Value="extendedCost"/>
+          <Item Value="transactionQuantity"/>
+          <Item Value="category"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

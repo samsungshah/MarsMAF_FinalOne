@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Welcome" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary"></amx:facet>
+        <amx:facet name="secondary"></amx:facet>
+        <amx:panelFormLayout id="pfl1">
+            <amx:inputText value="#{bindings.userName.inputValue}" label="User Name" id="it1"/>
+            <amx:inputText value="#{bindings.password.inputValue}" label="Password" id="it2" secret="true"/>
+        </amx:panelFormLayout>
+        <amx:commandButton actionListener="#{bindings.process.execute}" text="Login"
+                           disabled="#{!bindings.process.enabled}" id="cb1" action="LoginBtnEvent">
+            <amx:setPropertyListener id="spl1" from="#{bindings.Return.inputValue}" to="#{pageFlowScope.AuthVal}"/>
+            <amx:setPropertyListener id="spl2" from="#{bindings.userName.inputValue}" to="#{pageFlowScope.Username}"/>
+        </amx:commandButton>
+    </amx:panelPage>
+</amx:view>

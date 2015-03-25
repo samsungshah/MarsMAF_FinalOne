@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="Inbuilt-Rpt-Disp-TF">
+    <default-activity>XxDmaListOfInbuiltRpt</default-activity>
+    <input-parameter-definition id="__1">
+      <name>UserId</name>
+      <value>#{pageFlowScope.UserId}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__2">
+      <name>RespId</name>
+      <value>#{pageFlowScope.RespId}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__3">
+      <name>ApplnId</name>
+      <value>#{pageFlowScope.ApplnId}</value>
+      <class>java.lang.StringBuffer</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__12">
+      <name>OUName</name>
+      <value>#{pageFlowScope.OUName}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <view id="XxDmaListOfInbuiltRpt">
+      <page>/Pages/XxDmaListOfInbuiltRpt.amx</page>
+    </view>
+    <view id="XxDmaPoSpendAnaIp">
+      <page>/Pages/XxDmaPoSpendAnaIp.amx</page>
+    </view>
+    <view id="XxDmaPoSpendAnaOp">
+      <page>/Pages/XxDmaPoSpendAnaOp.amx</page>
+    </view>
+    <view id="XxDmaInvStkStatIp">
+      <page>/Pages/XxDmaInvStkStatIp.amx</page>
+    </view>
+    <view id="XxDmaInvStkStatOp">
+      <page>/Pages/XxDmaInvStkStatOp.amx</page>
+    </view>
+    <view id="TestLov">
+      <page>/TestLov.amx</page>
+    </view>
+    <view id="XxDmaOntShipWarIp">
+      <page>/Pages/XxDmaOntShipWarIp.amx</page>
+    </view>
+    <view id="XxDmaOntShipWarOp">
+      <page>/Pages/XxDmaOntShipWarOp.amx</page>
+    </view>
+    <view id="XxDmaCstCntRevExpIp">
+      <page>/Pages/XxDmaCstCntRevExpIp.amx</page>
+    </view>
+    <view id="XxDmaCstCntRevExpOp">
+      <page>/Pages/XxDmaCstCntRevExpOp.amx</page>
+    </view>
+    <control-flow-rule id="__4">
+      <from-activity-id>XxDmaListOfInbuiltRpt</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>PoSpendAna</from-outcome>
+        <to-activity-id>XxDmaPoSpendAnaIp</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome>InvStkStatIp</from-outcome>
+        <to-activity-id>XxDmaInvStkStatIp</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__11">
+        <from-outcome>test</from-outcome>
+        <to-activity-id>TestLov</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome>OntShipWarIp</from-outcome>
+        <to-activity-id>XxDmaOntShipWarIp</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome>CstCntRevExpInp</from-outcome>
+        <to-activity-id>XxDmaCstCntRevExpIp</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>XxDmaPoSpendAnaIp</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>PoSpendAnaOP</from-outcome>
+        <to-activity-id>XxDmaPoSpendAnaOp</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>XxDmaInvStkStatIp</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>InvStkStatOp</from-outcome>
+        <to-activity-id>XxDmaInvStkStatOp</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id>XxDmaOntShipWarIp</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome>OntShipWarOp</from-outcome>
+        <to-activity-id>XxDmaOntShipWarOp</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id>XxDmaCstCntRevExpIp</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome>CstCntRevExpOp</from-outcome>
+        <to-activity-id>XxDmaCstCntRevExpOp</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

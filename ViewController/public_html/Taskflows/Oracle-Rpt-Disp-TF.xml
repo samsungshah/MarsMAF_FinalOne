@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="Oracle-Rpt-Disp-TF">
+    <default-activity>XxDmaListOfCP</default-activity>
+     <input-parameter-definition id="__1">
+      <name>UserId</name>
+      <value>#{pageFlowScope.UserId}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__2">
+      <name>RespId</name>
+      <value>#{pageFlowScope.RespId}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__3">
+      <name>ApplnId</name>
+      <value>#{pageFlowScope.ApplnId}</value>
+      <class>java.lang.StringBuffer</class>
+      <required/>
+    </input-parameter-definition>
+    <view id="XxDmaListOfCP">
+      <page>/Pages/XxDmaListOfCP.amx</page>
+    </view>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

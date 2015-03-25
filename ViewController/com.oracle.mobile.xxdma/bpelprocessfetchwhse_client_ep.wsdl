@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="BPELProcessFetchWhse" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvFetchWhseLov!2.0/BPELProcessFetchWhse.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="BPELProcessFetchWhse">
+    <plnk:role name="BPELProcessFetchWhseProvider">
+      <plnk:portType name="client:BPELProcessFetchWhse"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse"
+              schemaLocation="BPELProcessFetchWhse.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="BPELProcessFetchWhseRequestMessage">
+    <wsdl:part name="payload" element="client:process"/>
+  </wsdl:message>
+  <wsdl:message name="BPELProcessFetchWhseResponseMessage">
+    <wsdl:part name="payload" element="client:processResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="BPELProcessFetchWhse">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:BPELProcessFetchWhseRequestMessage"/>
+      <wsdl:output message="client:BPELProcessFetchWhseResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BPELProcessFetchWhseBinding" type="client:BPELProcessFetchWhse">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bpelprocessfetchwhse_client_ep">
+    <wsdl:port name="BPELProcessFetchWhse_pt" binding="client:BPELProcessFetchWhseBinding">
+      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/InvorgParamLov_WLService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

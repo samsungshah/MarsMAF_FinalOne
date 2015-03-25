@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+          <amx:outputText value="Report Output" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" action="__back"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+    </amx:facet>
+    <dvtm:barChart var="row" value="#{bindings.ShippingResponse.collectionModel}" id="bc1">
+      <amx:facet name="dataStamp">
+        <dvtm:chartDataItem group="#{row.Warehouse}" value="#{row.NoOfSalesOrders}"
+                            series="#{bindings.ShippingResponse.hints.NoOfSalesOrders.label}" id="cdi1"/>
+      </amx:facet>
+      <dvtm:legend position="end" id="l1"/>
+    </dvtm:barChart>
+  </amx:panelPage>
+</amx:view>

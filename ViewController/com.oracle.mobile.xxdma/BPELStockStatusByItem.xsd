@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns:ns1="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.oracle.com/XXDMA/Common">
+  <element name="process">
+    <complexType>
+      <sequence>
+        <element name="CallingSystemName" type="string"/>
+        <element name="CallingInterfaceName" type="string"/>
+        <element name="DebugFlag" type="string"/>
+        <element name="UserId" type="string"/>
+        <element name="RespId" type="string"/>
+        <element name="RespApplId" type="string"/>
+        <element name="inventoryOrg" type="string"/>
+        <element name="subInventory" type="string"/>
+        <element name="itemCategoryFrom" type="string"/>
+        <element name="itemCategoryTo" type="string"/>
+        <element name="itemFrom" type="string"/>
+        <element name="itemTo" type="string"/>
+        <element name="asOnDate" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="processResponse">
+    <complexType>
+      <sequence>
+        <element name="StockStatusTypeResponse" type="ns1:StockStatusType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+        <element name="returnCode" type="string"/>
+        <element name="returnMsg" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="StockStatusType">
+    <sequence>
+      <element name="organizationCode" type="string" minOccurs="0" nillable="true"/>
+      <element name="category" type="string" minOccurs="0" nillable="true"/>
+      <element name="partNumber" type="string" minOccurs="0" nillable="true"/>
+      <element name="partDescription" type="string" minOccurs="0" nillable="true"/>
+      <element name="secondaryInventoryName" type="string" minOccurs="0" nillable="true"/>
+      <element name="transactionQuantity" type="decimal" minOccurs="0" nillable="true"/>
+      <element name="uom" type="string" minOccurs="0" nillable="true"/>
+      <element name="unitCost" type="decimal" minOccurs="0" nillable="true"/>
+      <element name="extendedCost" type="decimal" minOccurs="0" nillable="true"/>
+    </sequence>
+  </complexType>
+</schema>

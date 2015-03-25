@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="bpelOULovProcess" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaFndOULov/bpelOULovProcess" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XXDMA/XxDmaFndOULov/bpelOULovProcess" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaFndOULov!1.0/bpelOULovProcess.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="bpelOULovProcess">
+    <plnk:role name="bpelOULovProcessProvider">
+      <plnk:portType name="client:bpelOULovProcess"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://xmlns.oracle.com/XXDMA/XxDmaFndOULov/bpelOULovProcess"
+              schemaLocation="bpelOULovProcess.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="bpelOULovProcessRequestMessage">
+    <wsdl:part name="payload" element="client:process"/>
+  </wsdl:message>
+  <wsdl:message name="bpelOULovProcessResponseMessage">
+    <wsdl:part name="payload" element="client:processResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="bpelOULovProcess">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:bpelOULovProcessRequestMessage"/>
+      <wsdl:output message="client:bpelOULovProcessResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="bpelOULovProcessBinding" type="client:bpelOULovProcess">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bpeloulovprocess_client_ep">
+    <wsdl:port name="bpelOULovProcess_pt" binding="client:bpelOULovProcessBinding">
+      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/OuParamLov_WLService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

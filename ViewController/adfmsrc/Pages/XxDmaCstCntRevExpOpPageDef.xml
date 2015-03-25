@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaCstCntRevExpOpPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="process.result" DataControl="GlCostCtrExpRevRpt_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.GlCostCtrExpRevRpt_WL.process_Result" id="processIterator"/>
+    <accessorIterator MasterBinding="processIterator" Binds="GLResponse" RangeSize="-1"
+                      DataControl="GlCostCtrExpRevRpt_WL"
+                      BeanClass="com.oracle.mobile.xxdma.GlCostCtrExpRevRpt_WL.process_Result.GLResponse"
+                      id="GLResponseIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="GlCostCtrExpRevRpt_WL"
+                  InstanceName="data.GlCostCtrExpRevRpt_WL"
+                  ReturnName="data.GlCostCtrExpRevRpt_WL.methodResults.process_GlCostCtrExpRevRpt_WL_process_result">
+      <NamedData NDName="CallingSystemName" NDValue="" NDType="java.lang.String"/>
+      <NamedData NDName="CallingInterfaceName" NDType="java.lang.String"/>
+      <NamedData NDName="DebugFlag" NDType="java.lang.String"/>
+      <NamedData NDName="UserId" NDType="java.lang.String"/>
+      <NamedData NDName="RespId" NDType="java.lang.String"/>
+      <NamedData NDName="RespApplId" NDType="java.lang.String"/>
+      <NamedData NDName="OperatingUnit" NDType="java.lang.String"/>
+      <NamedData NDName="FromPeriod" NDType="java.lang.String"/>
+      <NamedData NDName="ToPeriod" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="GLResponseIterator" id="GLResponse">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.GlCostCtrExpRevRpt_WL.process_Result.GLResponse"
+                      Name="GLResponse0">
+        <AttrNames>
+          <Item Value="ExpenseAmount"/>
+          <Item Value="RevenueAmount"/>
+          <Item Value="CostCenterSegment"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

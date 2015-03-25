@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaPoSpendAnaIpPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="process_P_SPEND_PERIOD_FROM" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_P_SPEND_PERIOD_TO" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_P_OPERATING_UNIT" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_P_SPEND_PERIOD_FROM" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_P_SPEND_PERIOD_TO" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_P_OPERATING_UNIT" IsQueriable="false"/>
+      <variable Type="java.lang.Object" Name="process1_TransactionHeader" IsQueriable="false"/>
+    </variableIterator>
+    <methodIterator Binds="process.result" DataControl="PoSpendAnaRpt_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.PoSpendAnaRpt_WL.process_Result" id="processIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="PoSpendAnaRpt_WL" id="PoSpendAnaRpt_WLIterator"/>
+    <accessorIterator MasterBinding="PoSpendAnaRpt_WLIterator" Binds="process_parameters" RangeSize="25"
+                      DataControl="PoSpendAnaRpt_WL" BeanClass="PoSpendAnaRpt_WL.Types.process"
+                      id="process_parametersIterator"/>
+    <accessorIterator MasterBinding="process_parametersIterator" Binds="TransactionHeader" RangeSize="25"
+                      DataControl="PoSpendAnaRpt_WL" BeanClass="PoSpendAnaRpt_WL.Types.process.TransactionHeader"
+                      id="TransactionHeaderIterator"/>
+    <accessorIterator MasterBinding="TransactionHeaderIterator" Binds="Status" RangeSize="25"
+                      DataControl="PoSpendAnaRpt_WL" BeanClass="PoSpendAnaRpt_WL.Types.process.TransactionHeader.Status"
+                      id="StatusIterator"/>
+    <methodIterator Binds="process1.result" DataControl="PoSpendAnaRpt_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.PoSpendAnaRpt_WL.process_Result" id="process1Iterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="PoSpendAnaRpt_WL" InstanceName="data.PoSpendAnaRpt_WL"
+                  ReturnName="data.PoSpendAnaRpt_WL.methodResults.process_PoSpendAnaRpt_WL_process_result">
+      <NamedData NDName="P_SPEND_PERIOD_FROM" NDType="java.lang.String"
+                 NDValue="${bindings.process_P_SPEND_PERIOD_FROM}"/>
+      <NamedData NDName="P_SPEND_PERIOD_TO" NDType="java.lang.String" NDValue="${bindings.process_P_SPEND_PERIOD_TO}"/>
+      <NamedData NDName="P_OPERATING_UNIT" NDType="java.lang.String" NDValue="${bindings.process_P_OPERATING_UNIT}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="P_SPEND_PERIOD_FROM">
+      <AttrNames>
+        <Item Value="process_P_SPEND_PERIOD_FROM"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="P_SPEND_PERIOD_TO">
+      <AttrNames>
+        <Item Value="process_P_SPEND_PERIOD_TO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="P_OPERATING_UNIT">
+      <AttrNames>
+        <Item Value="process_P_OPERATING_UNIT"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="CallingSystemName">
+      <AttrNames>
+        <Item Value="CallingSystemName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="CallingInterfaceName">
+      <AttrNames>
+        <Item Value="CallingInterfaceName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="DebugFlag">
+      <AttrNames>
+        <Item Value="DebugFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="userId">
+      <AttrNames>
+        <Item Value="userId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="respId">
+      <AttrNames>
+        <Item Value="respId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransactionHeaderIterator" id="respApplId">
+      <AttrNames>
+        <Item Value="respApplId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StatusIterator" id="returnCode">
+      <AttrNames>
+        <Item Value="returnCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StatusIterator" id="returnMsg">
+      <AttrNames>
+        <Item Value="returnMsg"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="process1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="PoSpendAnaRpt_WL" InstanceName="data.PoSpendAnaRpt_WL"
+                  ReturnName="data.PoSpendAnaRpt_WL.methodResults.process_PoSpendAnaRpt_WL_process_result">
+      <NamedData NDName="P_SPEND_PERIOD_FROM" NDType="java.lang.String"
+                 NDValue="${bindings.process1_P_SPEND_PERIOD_FROM}"/>
+      <NamedData NDName="P_SPEND_PERIOD_TO" NDType="java.lang.String" NDValue="${bindings.process1_P_SPEND_PERIOD_TO}"/>
+      <NamedData NDName="P_OPERATING_UNIT" NDType="java.lang.String" NDValue="${bindings.process1_P_OPERATING_UNIT}"/>
+      <NamedData NDName="TransactionHeader" NDType="java.lang.Object" NDValue="${bindings.process1_TransactionHeader}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="P_SPEND_PERIOD_FROM1">
+      <AttrNames>
+        <Item Value="process1_P_SPEND_PERIOD_FROM"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="P_SPEND_PERIOD_TO1">
+      <AttrNames>
+        <Item Value="process1_P_SPEND_PERIOD_TO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="P_OPERATING_UNIT1">
+      <AttrNames>
+        <Item Value="process1_P_OPERATING_UNIT"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="TransactionHeader">
+      <AttrNames>
+        <Item Value="process1_TransactionHeader"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

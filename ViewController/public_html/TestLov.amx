@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Header" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2"/>
+    </amx:facet>
+    <amx:panelFormLayout id="pfl1">
+      <amx:inputText value="#{bindings.result.inputValue}" label="#{bindings.result.hints.label}" id="it1"/>
+      <amx:inputText value="#{bindings.CallingInterfaceName1.inputValue}"
+                     label="#{bindings.CallingInterfaceName1.hints.label}" id="it2"/>
+      <amx:iterator var="row" value="#{bindings.process_Result.collectionModel}" id="i1">
+        <amx:panelLabelAndMessage label="#{bindings.process_Result.hints.result.label}" id="plam1">
+          <amx:outputText value="#{row.result}" id="ot2"/>
+        </amx:panelLabelAndMessage>
+      </amx:iterator>
+      <amx:selectOneChoice value="#{bindings.periodList.inputValue}" label="#{bindings.periodList.label}" id="soc1">
+        <amx:selectItems value="#{bindings.periodList.items}" id="si1"/>
+      </amx:selectOneChoice>
+    </amx:panelFormLayout>
+    <amx:inputText value="#{bindings.element.inputValue}" simple="true" id="it3"/>
+    <amx:selectOneChoice value="#{bindings.periodList.inputValue}" label="#{bindings.periodList.label}" id="soc2">
+      <amx:selectItems value="#{bindings.periodList.items}" id="si2"/>
+    </amx:selectOneChoice>
+    <amx:selectOneChoice value="#{bindings.element1.inputValue}" label="#{bindings.element1.label}" id="soc3">
+      <amx:selectItems value="#{bindings.element1.items}" id="si3"/>
+    </amx:selectOneChoice>
+    <amx:selectOneChoice value="#{bindings.periodList.inputValue}" label="#{bindings.periodList.label}" id="soc4">
+      <amx:selectItems value="#{bindings.periodList.items}" id="si4"/>
+    </amx:selectOneChoice>
+    <amx:selectOneChoice value="#{bindings.element2.inputValue}" label="#{bindings.element2.label}" id="soc5">
+      <amx:selectItems value="#{bindings.element2.items}" id="si5"/>
+    </amx:selectOneChoice>
+    <amx:selectOneChoice value="#{bindings.element3.inputValue}" label="#{bindings.element3.label}" id="soc6">
+      <amx:selectItems value="#{bindings.element3.items}" id="si6"/>
+    </amx:selectOneChoice>
+    <amx:selectOneChoice value="#{bindings.element4.inputValue}" label="#{bindings.element4.label}" id="soc7">
+      <amx:selectItems value="#{bindings.element4.items}" id="si7"/>
+    </amx:selectOneChoice>
+  </amx:panelPage>
+</amx:view>

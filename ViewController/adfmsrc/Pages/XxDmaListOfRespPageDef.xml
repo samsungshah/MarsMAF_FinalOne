@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaListOfRespPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="process.result" DataControl="ListOfResp_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.ListOfResp_WL.process.result" id="processIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="ListOfResp_WL" InstanceName="data.ListOfResp_WL"
+                  ReturnName="data.ListOfResp_WL.methodResults.process_ListOfResp_WL_process_result">
+      <NamedData NDName="input" NDValue="#{pageFlowScope.Username}" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="processIterator" id="result">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.ListOfResp_WL.process.result" Name="result0">
+        <AttrNames>
+          <Item Value="resp_responsibility_name"/>
+          <Item Value="user_Resp_responsibility_id"/>
+          <Item Value="usr_user_name"/>
+          <Item Value="usr_user_id"/>
+          <Item Value="user_Resp_responsibility_application_id"/>
+          <Item Value="resp_responsibility_key"/>
+          <Item Value="app_application_short_name"/>
+          <Item Value="app_product"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="processIterator" id="user_Resp_responsibility_application_id">
+      <AttrNames>
+        <Item Value="user_Resp_responsibility_application_id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="processIterator" id="user_Resp_responsibility_id">
+      <AttrNames>
+        <Item Value="user_Resp_responsibility_id"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="processIterator" id="result1">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.ListOfResp_WL.process.result" Name="result10">
+        <AttrNames>
+          <Item Value="resp_responsibility_name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="processIterator" id="usr_user_id">
+      <AttrNames>
+        <Item Value="usr_user_id"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="processIterator" id="result2">
+      <nodeDefinition DefName="com.oracle.mobile.xxdma.ListOfResp_WL.process.result" Name="result20">
+        <AttrNames>
+          <Item Value="usr_user_name"/>
+          <Item Value="usr_user_id"/>
+          <Item Value="user_Resp_responsibility_id"/>
+          <Item Value="user_Resp_responsibility_application_id"/>
+          <Item Value="resp_responsibility_name"/>
+          <Item Value="resp_responsibility_key"/>
+          <Item Value="app_application_short_name"/>
+          <Item Value="app_product"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
